@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,117 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Time_for_a_Break_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="YG4-FG-rRu">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tBG-BJ-gb5">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="253"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сколько отдых" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wql-uP-KGw">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="253"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="wql-uP-KGw" secondAttribute="trailing" id="5w0-2J-qxt"/>
+                                            <constraint firstItem="wql-uP-KGw" firstAttribute="top" secondItem="tBG-BJ-gb5" secondAttribute="top" id="d6r-nh-xEv"/>
+                                            <constraint firstItem="wql-uP-KGw" firstAttribute="leading" secondItem="tBG-BJ-gb5" secondAttribute="leading" id="pUY-JK-Vzr"/>
+                                            <constraint firstAttribute="bottom" secondItem="wql-uP-KGw" secondAttribute="bottom" id="ud9-lV-hZG"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="ajR-tK-5Hx">
+                                        <rect key="frame" x="0.0" y="253" width="393" height="253"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hvq-PY-hWN">
+                                                <rect key="frame" x="0.0" y="0.0" width="102.33333333333333" height="253"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PqW-0h-MiQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="102.33333333333333" height="253"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Тест">
+                                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="pressedSelectedTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kTJ-FI-czj"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="PqW-0h-MiQ" secondAttribute="bottom" id="1U6-aQ-Vkd"/>
+                                                    <constraint firstItem="PqW-0h-MiQ" firstAttribute="top" secondItem="Hvq-PY-hWN" secondAttribute="top" id="Qlu-aG-X6r"/>
+                                                    <constraint firstAttribute="trailing" secondItem="PqW-0h-MiQ" secondAttribute="trailing" id="gLo-Pa-hvi"/>
+                                                    <constraint firstItem="PqW-0h-MiQ" firstAttribute="leading" secondItem="Hvq-PY-hWN" secondAttribute="leading" id="irb-Wm-nCC"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oq2-l0-8cM">
+                                                <rect key="frame" x="145.33333333333334" y="0.0" width="102.33333333333334" height="253"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRN-28-Ljz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="102.33333333333333" height="253"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Минута">
+                                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="pressedSelectedTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DrL-tS-lu4"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="rRN-28-Ljz" firstAttribute="leading" secondItem="oq2-l0-8cM" secondAttribute="leading" id="fLU-UK-UU1"/>
+                                                    <constraint firstAttribute="trailing" secondItem="rRN-28-Ljz" secondAttribute="trailing" id="jV5-B5-BjE"/>
+                                                    <constraint firstItem="rRN-28-Ljz" firstAttribute="top" secondItem="oq2-l0-8cM" secondAttribute="top" id="ke8-n9-jVJ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="rRN-28-Ljz" secondAttribute="bottom" id="s0j-Tn-yV1"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sKo-rj-jQi">
+                                                <rect key="frame" x="290.66666666666669" y="0.0" width="102.33333333333331" height="253"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fa-9z-0NJ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="102.33333333333333" height="253"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Час">
+                                                            <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="pressedSelectedTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gws-LF-ofu"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="8fa-9z-0NJ" secondAttribute="trailing" id="G9p-On-7Vt"/>
+                                                    <constraint firstAttribute="bottom" secondItem="8fa-9z-0NJ" secondAttribute="bottom" id="jdh-N9-uL3"/>
+                                                    <constraint firstItem="8fa-9z-0NJ" firstAttribute="top" secondItem="sKo-rj-jQi" secondAttribute="top" id="ouw-ob-aaW"/>
+                                                    <constraint firstItem="8fa-9z-0NJ" firstAttribute="leading" secondItem="sKo-rj-jQi" secondAttribute="leading" id="twb-og-o6M"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oIH-Wl-6jr">
+                                        <rect key="frame" x="0.0" y="506" width="393" height="253"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.22352941179999999" green="0.24313725489999999" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="YG4-FG-rRu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="52r-8W-Te8"/>
+                            <constraint firstItem="YG4-FG-rRu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8Zk-Jk-Nwc"/>
+                            <constraint firstItem="YG4-FG-rRu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Qhz-sV-fpn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YG4-FG-rRu" secondAttribute="trailing" id="r8Q-NX-e3a"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="75.572519083969468" y="-2.1126760563380285"/>
         </scene>
     </scenes>
 </document>

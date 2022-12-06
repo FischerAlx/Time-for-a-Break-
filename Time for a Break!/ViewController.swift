@@ -8,12 +8,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    
+    
+    @IBAction func pressedSelectedTime(_ sender: UIButton) {
+        if sender.currentTitle != nil {
+            print(sender.currentTitle)
+        } else {
+            print("nilllll((((")
+        }
     }
-
-
+    
+    
+    
+    
+    
 }
 
