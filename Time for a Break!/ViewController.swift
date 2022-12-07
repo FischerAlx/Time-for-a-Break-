@@ -10,30 +10,36 @@ import UIKit
 class ViewController: UIViewController {
     
     let freeTime = ["Тест": 5, "Минута": 60, "Час": 3600]
-    var secondsLeft = 5
+    var secondsLeft = 0
+    var secondsTotal = 0
+    var progressBarCount: Float = 1.0
     var timer = Timer()
     
     @IBOutlet weak var progressBarVIew: UIProgressView!
     @IBAction func pressedSelectedTime(_ sender: UIButton) {
         
+        progressBarVIew.progress = 0.0
         timer.invalidate()
-        secondsLeft = freeTime[(sender.titleLabel?.text!)!]!
+        secondsTotal = freeTime[(sender.titleLabel?.text!)!]!
         
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         
     }
     
         @objc func updateTimer() {
-            var progressBarCount: Float = 1.0
-            if secondsLeft > 0 {
+            if secondsLeft < secondsTotal {
                 
                 //print("\(secondsLeft) seconds")
-                progressBarCount = Float(1/secondsLeft)
+                //secondsLeft / secondsTotal
+                progressBarCount = Float(secondsLeft)/Float(secondsTotal)
                 progressBarVIew.progress = progressBarCount
-                secondsLeft -= 1
+                secondsLeft += 1
                 
-            } else {
+            } else if secondsLeft == secondsTotal {
+                progressBarVIew.progress = 1.0
                 print("end")
+                secondsLeft += 1
+
             }
         }
         
