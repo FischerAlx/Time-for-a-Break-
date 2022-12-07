@@ -15,35 +15,38 @@ class ViewController: UIViewController {
     var progressBarCount: Float = 1.0
     var timer = Timer()
     
+    @IBOutlet weak var labelView: UILabel!
     @IBOutlet weak var progressBarVIew: UIProgressView!
     @IBAction func pressedSelectedTime(_ sender: UIButton) {
         
         progressBarVIew.progress = 0.0
         timer.invalidate()
         secondsTotal = freeTime[(sender.titleLabel?.text!)!]!
+        secondsLeft = 0
+        labelView.text = (sender.titleLabel?.text!)!
         
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         
     }
     
-        @objc func updateTimer() {
-            if secondsLeft < secondsTotal {
-                
-                //print("\(secondsLeft) seconds")
-                //secondsLeft / secondsTotal
-                progressBarCount = Float(secondsLeft)/Float(secondsTotal)
-                progressBarVIew.progress = progressBarCount
-                secondsLeft += 1
-                
-            } else if secondsLeft == secondsTotal {
-                progressBarVIew.progress = 1.0
-                print("end")
-                secondsLeft += 1
-
-            }
+    @objc func updateTimer() {
+        if secondsLeft < secondsTotal {
+            
+            progressBarCount = Float(secondsLeft)/Float(secondsTotal)
+            progressBarVIew.progress = progressBarCount
+            secondsLeft += 1
+            
+        } else {
+            
+            progressBarVIew.progress = 1.0
+            labelView.text = "За работу!"
+            print("end")
+            timer.invalidate()
+            
         }
-        
-        
+    }
+    
+    
     
     
     
